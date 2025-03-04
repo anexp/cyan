@@ -1,7 +1,7 @@
 # Android Studio
 
 
-Download the tarball from <https://developer.android.com/studio#downloads/>
+Download the tarball from https://developer.android.com/studio#downloads
 
 Untar it and move `android-studio` directory to `/opt`
 
