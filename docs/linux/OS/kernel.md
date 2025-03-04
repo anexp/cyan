@@ -1,0 +1,5 @@
+# Kernel
+
+```
+ls -lrth /boot/
+```
