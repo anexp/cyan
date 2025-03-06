@@ -8,14 +8,14 @@ gnome-control-center keyboard
 ### CLI method
 
 To get keyboard bindings using gsettings in a Linux terminal, you can use the following command:
-```
+```sh
 gsettings get org.gnome.desktop.wm.keybindings <keybinding>
 ```
 
-Replace <keybinding> with the name of the keybinding you want to retrieve.
+Replace `<keybinding>` with the name of the keybinding you want to retrieve.
 For example, to retrieve the keybinding for switching windows, use the following command:
 
-```
+```sh
 gsettings get org.gnome.desktop.wm.keybindings switch-windows
 ```
 
@@ -27,7 +27,7 @@ You can also use the list-keys and list-recursively options with gsettings to li
 For example:
 
 
-```
+```sh
 gsettings list-keys org.gnome.desktop.wm.keybindings
 
 gsettings list-recursively org.gnome.desktop.wm.keybindings
@@ -40,18 +40,18 @@ These commands will output a list of all available keybindings in the terminal.
 
 ### Custom key bindings
 Get all custom keybindings
-```
+```sh
 gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
 ```
 
 Get
-```
+```sh
 gsettings get org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name
 gsettings get org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command
 gsettings get org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding
 ```
 Set
-```
+```sh
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "Gnome terminal"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "gnome-terminal"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Primary><Alt>t"
