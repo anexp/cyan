@@ -42,8 +42,8 @@ Set-Service -Name ssh-agent -StartupType 'Automatic'
 
 ###  Use powershell as default shell on ssh login
 
-<https://superuser.com/questions/1799896/how-to-configure-powershell-for-openssh-instead-of-cmd/>
-<https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_server_configuration#configuring-the-default-shell-for-openssh-in-windows/>
+- https://superuser.com/questions/1799896/how-to-configure-powershell-for-openssh-instead-of-cmd
+- https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_server_configuration#configuring-the-default-shell-for-openssh-in-windows
 
 First enter powershell session using 
 ```ps1
@@ -60,17 +60,17 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" `
                  -Force
 ```
 
-### Public Key authenication
+### Public Key authentication
 
 Edit `C:\ProgramData\ssh\sshd_config`
-as mentioned in <https://www.youtube.com/watch?v=9dhQIa8fAXU/>
+as mentioned in [youtube video](https://www.youtube.com/watch?v=9dhQIa8fAXU)
 
-Enable public authenication by adding
+Enable public authentication by adding
 ```
 PubkeyAuthentication yes
 ```
 
-Disable password authenication by adding
+Disable password authentication by adding
 ```
 PasswordAuthentication no
 ```
@@ -87,7 +87,7 @@ Copy your public keys to
 
 
 Restart the ssh server service
-```
+```ps1
 Restart-Service sshd
 ```
 
