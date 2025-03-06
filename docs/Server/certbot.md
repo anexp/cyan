@@ -21,7 +21,7 @@ sudo certbot -d "*.subdomain.domain.tld" --manual --preferred-challenges dns cer
 
 
 ### Check if a TXT record is visible  
-Go to <https://toolbox.googleapps.com/apps/dig/#TXT/_acme-challenge.subdomain.domain.tld/>
+Go to [Google Toolbox](https://toolbox.googleapps.com/apps/dig/#TXT/_acme-challenge.subdomain.domain.tld)
 
 
 
