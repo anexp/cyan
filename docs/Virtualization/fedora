@@ -1,0 +1,9 @@
+# Virtualization on Fedora
+
+```
+sudo dnf install @virtualization
+sudo systemctl enable --now libvirtd
+systemctl status libvirtd
+sudo usermod -a $(whoami) -G libvirt
+groups
+```
