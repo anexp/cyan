@@ -68,8 +68,8 @@ for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
 done;
 ```
 
-Install Virtio Drivers from <https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio//>
-Website<https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers/> Under subsection **Downloading Wizard in the VM** 
+Install Virtio Drivers from [fedorapeople website](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio)
+[Website](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers) Under subsection **Downloading Wizard in the VM** 
 download **virtio-win-guest-tools.exe**
 
 ### Mouse not working
