@@ -1,0 +1,4 @@
+[Service]
+ExecStart=/home/darklord/Code/daemon/systemd/myservice_script.sh
+
+

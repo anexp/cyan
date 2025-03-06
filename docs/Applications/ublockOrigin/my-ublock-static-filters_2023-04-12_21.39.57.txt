@@ -1,0 +1,5 @@
+! 2023-04-08 https://www.geeksforgeeks.org
+www.geeksforgeeks.org##.login-modal-div > .modal-content
+www.geeksforgeeks.org##.show-consent.hide-consent.cookie-consent
+www.geeksforgeeks.org##.login-modal-div
+
