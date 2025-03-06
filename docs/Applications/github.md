@@ -24,9 +24,9 @@ Where visibility-string = private,public or internal
 ```sh
 gh release list | sed 's/|/ /' | awk '{print $1, $8}' | while read -r line; do gh release delete -y "$line"; done
 ```
-- gh release list gets a list of releases as a table.
-- sed 's/|/ /' | awk '{print $1, $8}' singles out the first column provided by the table.
-- while read -r line; do gh release delete -y "$line"; done ran the delete command for each result.
+- `gh release list` gets a list of releases as a table.
+- `sed 's/|/ /' | awk '{print $1, $8}'` singles out the first column provided by the table.
+- `while read -r line; do gh release delete -y "$line"; done` ran the delete command for each result.
 
 After deleting all of the releases I had to also get rid of all the tags. This command did that for me.
 
