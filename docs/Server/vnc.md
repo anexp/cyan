@@ -40,4 +40,4 @@ tighvncpasswd  (to set the password)
 
 ## TigerVNC
 
-Press <F8> for context menu
+Press `<F8>` for context menu
