@@ -1,4 +1,4 @@
-# Overview GPG
+# gpg
 
 List keys:
 ```sh
