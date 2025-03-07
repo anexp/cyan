@@ -1,0 +1,62 @@
+app-id: org.flatpak.Hello
+runtime: org.freedesktop.Platform
+runtime-version: '22.08'
+sdk: org.freedesktop.Sdk
+command: run.sh
+rename-desktop-file: awesome-app.desktop
+rename-icon: awesome-app
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=x11
+  - --socket=pulseaudio
+  - --device=dri
+  # - --filesystem=home
+modules:
+
+  - name: run
+    buildsystem: simple
+    build-commands:
+      - install -D run.sh /app/bin/run.sh
+    sources:
+      - type: script
+        dest-filename:  run.sh
+        commands:
+          - 'echo "Running Inside Sandbox" '
+          - '/app/opt/pfetch/pfetch'
+          - '/app/opt/awesome-app-debian/awesome-app-bin/binaries/main'
+
+  - name: pfetch
+    buildsystem: simple
+    build-commands:
+      - mkdir -pv /app/opt/pfetch
+      - cp -rv . /app/opt/pfetch
+    sources:
+      - type: git
+        url: https://github.com/dylanaraps/pfetch.git
+  - name: awesome-app-git
+    buildsystem: simple
+    build-commands:
+      - mkdir -pv /app
+      - cp -rv share /app
+      - desktop-file-edit --set-key=Exec --set-value="run.sh" /app/share/applications/awesome-app.desktop
+      - desktop-file-edit --set-key=Icon --set-value="org.flatpak.Hello" /app/share/applications/awesome-app.desktop
+    sources:
+      - type: git
+        url: https://github.com/github-usernaem/awesome-app.git
+        branch: master
+  - name: awesome-app-debian
+    buildsystem: simple
+    build-commands:
+      - ar -x awesome-app.deb
+      - rm -f awesome-app.deb
+      - tar -xf data.tar.*
+      - rm -f control.tar.gz data.tar.* debian-binary
+      - mkdir -pv /app/opt/awesome-app-debian
+      - cp -r opt/* /app/opt/awesome-app-debian
+
+    sources:
+      - type: file
+        url: "https://github.com/github-usernaem/awesome-app/releases/download/v1.0.0/awesome-app.deb"
+        dest-filename: "awesome-app.deb"
+        sha256: "c2f40a9a98805b27815d2e70cf6f07b6e2161f27098ebb98429a2fe0a7e6c995"
